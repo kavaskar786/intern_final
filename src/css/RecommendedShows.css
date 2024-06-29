@@ -7,7 +7,6 @@
   z-index: 1;
   margin: 0 auto;
   margin-bottom: 30px;
-  scroll-snap-type: x mandatory;
 }
 
 .recommended-card {
@@ -19,7 +18,6 @@
   flex-shrink: 0;
   transition: transform 0.3s ease;
   position: relative;
-  scroll-snap-align: center;
 }
 
 .recommended-image {
