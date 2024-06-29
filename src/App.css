@@ -1,19 +1,49 @@
-/* App.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
 
-/* Replace 'your-svg-url.svg' with the actual URL of your SVG image */
-.app-container {
+body {
   font-family: 'Inter', sans-serif;
-  background: url('./images/Front\ screen.svg') no-repeat center center fixed;
+  background: url('./images/Front screen.svg') no-repeat center center fixed;
   background-size: cover;
   color: #1E2022;
-  padding: 0px 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Night effect overlay */
+  z-index: -1;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
   height: 100vh;
   overflow-y: auto;
 }
+
+.content-wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
 
 .header {
   color: #CF2D2D;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }

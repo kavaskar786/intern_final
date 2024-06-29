@@ -1,0 +1,37 @@
+.landing-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .landing-content {
+    max-width: 75.5em;
+    background: rgba(255, 255, 255, 0); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .landing-content h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .landing-content p {
+    max-width: 55rem;
+    font-size: 1.3rem;
+    color: #ffffff;
+  }
+  

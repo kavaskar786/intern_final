@@ -1,11 +1,24 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+
 import '../css/RecommendedShows.css';
 
 const convertDriveLink = (url) => {
   const fileIdMatch = url.match(/d\/(.*?)\//);
   const fileId = fileIdMatch ? fileIdMatch[1] : null;
   return fileId ? `https://drive.google.com/thumbnail?id=${fileId}` : url;
+};
+
+const formatDate = (dateString) => {
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options);
+};
+
+const formatDistance = (meters) => {
+  const km = meters / 1000;
+  return km.toFixed(2) + ' Km';
 };
 
 const RecommendedShows = () => {
@@ -50,6 +63,7 @@ const RecommendedShows = () => {
       const card = containerRef.current.children[newIndex];
       const cardRect = card.getBoundingClientRect();
       const containerRect = containerRef.current.getBoundingClientRect();
+
 
       if (cardRect.left < containerRect.left || cardRect.right > containerRect.right) {
         card.scrollIntoView({ behavior: 'smooth', inline: 'center' });
@@ -119,6 +133,8 @@ const RecommendedShows = () => {
   }, []);
 
   return (
+    <div>
+      <a href='' className='heading'>Recommended shows <span>&rarr;</span></a>
     <div className="recommended-container" ref={containerRef}>
       {shows.map((show, index) => (
         <div
@@ -127,11 +143,20 @@ const RecommendedShows = () => {
         >
           <img src={show.imgUrl} alt={show.eventName} className="recommended-image" />
           <div className="recommended-details">
-            <h3 className="recommended-title">{show.eventName}</h3>
-            <p className="recommended-subtitle">{show.cityName}</p>
+            <div className='tit_cit'>
+            <h5 className="recommended-title">{show.eventName}</h5>
+            <p className="recommended-subtitle">
+              <FontAwesomeIcon icon={faMapMarkerAlt} /> {show.cityName}
+            </p>
+            </div>
+            <div className='dat_wet'>
+            <p className="recommended-subtitle">{formatDate(show.date)}</p>
+            <p className="recommended-subtitle2">{show.weather} | {formatDistance(show.distanceKm)}</p>
+            </div>
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

@@ -1,54 +1,89 @@
-.recommended-container {
-  display: flex;
-  overflow-x: auto;
-  padding: 20px;
-  gap: 10px;
-  scrollbar-width: none; /* Firefox */
-  /* Enable smooth scrolling on iOS */
+.heading{
+  padding: 10px;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background: rgba(0,0,0,0);
+  text-decoration: none ;
 }
 
-.recommended-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+.heading:hover{
+  text-decoration: underline;
+}
+
+.recommended-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
 }
 
 .recommended-card {
-  position: relative;
   min-width: 200px;
-  height: 300px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
-  border: 1px solid #B0BABF;
-  transition: border 0.3s ease;
-}
-
-.recommended-card.highlight {
-  border: 2px solid blue;
+  background: #fff;
+  margin: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  position: relative;
 }
 
 .recommended-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.1) ;
+  transform: scale(1.13) ;
 }
 
 .recommended-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+  padding: 10px;
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent); /* Linear gradient effect */
   color: #fff;
   width: 100%;
-  padding: 10px;
   box-sizing: border-box;
 }
 
 .recommended-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
+  color: #fff;
+  font-size: .7rem;
+  margin: 5px 0;
 }
 
 .recommended-subtitle {
-  font-size: 0.8rem;
-  margin: 0;
+  color: #fff;
+  font-size: 0.6rem;
+  margin: 2px 0;
+}
+
+.highlight {
+  border: 2px solid blue;
+  transition: border-color 0.3s;
+}
+
+.tit_cit{
+  width: 50%;
+}
+
+.dat_wet{
+ 
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  gap:5px;
+  justify-content: flex-end;
+  flex-direction: column;
+
+}
+
+.recommended-subtitle2 {
+  color: #fff;
+  font-size: 0.52rem;
+  margin: 2px 0;
 }
