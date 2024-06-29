@@ -136,6 +136,7 @@ const RecommendedShows = () => {
     <div>
       <a href='' className='heading'>Recommended shows <span>&rarr;</span></a>
     <div className="recommended-container" ref={containerRef}>
+      
       {shows.map((show, index) => (
         <div
           key={show.eventName}

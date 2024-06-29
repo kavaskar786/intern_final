@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import axios from 'axios';
 import '../css/UpcomingEvents.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const MAX_PAGES = 5;
 
@@ -10,6 +12,15 @@ const convertDriveLink = (url) => {
   return `https://drive.google.com/thumbnail?id=${fileId}`;
 };
 
+const formatDate = (dateString) => {
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options);
+};
+
+const formatDistance = (meters) => {
+  const km = meters / 1000;
+  return km.toFixed(2) + ' Km';
+};
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
@@ -54,19 +65,30 @@ const UpcomingEvents = () => {
   }, [loading, hasMore]);
 
   return (
-    <div className="upcoming-container">
-      {events.map((event, index) => (
-        <div key={event.eventName} className="upcoming-card" ref={index === events.length - 1 ? lastEventElementRef : null}>
-          <img src={event.imgUrl} alt={event.eventName} className="upcoming-image" />
-          <div className="upcoming-details">
-            <h3 className="upcoming-title">{event.eventName}</h3>
-            <p className="upcoming-subtitle">{event.cityName}</p>
-            <p className="upcoming-subtitle">{new Date(event.date).toLocaleDateString()}</p>
-            <p className="upcoming-subtitle">{event.weather}</p>
+    <div>
+      <a href='' className='heading2'>Upcoming events <span>&rarr;</span></a>
+      <div className="upcoming-container">
+        {events.map((event, index) => (
+          <div key={event.eventName} className="upcoming-card" ref={index === events.length - 1 ? lastEventElementRef : null}>
+            <div className="image-container">
+              <div className='img_cont'>
+              <img src={event.imgUrl} alt={event.eventName} className="upcoming-image" />
+              </div>
+              <p className="upcoming-date">{formatDate(event.date)}</p>
+            </div>
+            <div className="upcoming-details">
+              <div>
+              <h3 className="upcoming-title">{event.eventName}</h3>
+              <p className="upcoming-subtitle"><FontAwesomeIcon icon={faMapMarkerAlt} /> {event.cityName}</p>
+              </div>
+              <div>
+              <p className="upcoming-subtitle">{event.weather} | {formatDistance(event.distanceKm)}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
-      {loading && <div className="loading-spinner">Loading...</div>}
+        ))}
+        {loading && <div className="loading-spinner">Loading...</div>}
+      </div>
     </div>
   );
 };

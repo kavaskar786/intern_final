@@ -1,14 +1,4 @@
-.heading{
-  padding: 10px;
-  font-size: 1.3rem;
-  color: #ffffff;
-  background: rgba(0,0,0,0);
-  text-decoration: none ;
-}
 
-.heading:hover{
-  text-decoration: underline;
-}
 
 .recommended-container {
   display: flex;
@@ -16,6 +6,7 @@
   position: relative;
   z-index: 1;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .recommended-card {
@@ -43,7 +34,6 @@
   padding: 10px;
   position: absolute;
   bottom: 0;
-
   background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent); /* Linear gradient effect */
   color: #fff;
   width: 100%;

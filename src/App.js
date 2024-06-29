@@ -2,14 +2,17 @@ import React from 'react';
 import { RecommendedShows } from './components/RecommendedShows';
 import { UpcomingEvents } from './components/UpcomingEvents';
 import LandingPage from './components/LandingPage';
+import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
   return (
     <div className="app-container">
-      <LandingPage />
+      <Navbar />
+      <div className="background-container"></div>
       <div className="content-wrapper">
-        <RecommendedShows />q
+        <LandingPage />
+        <RecommendedShows />
         <UpcomingEvents />
       </div>
     </div>
@@ -17,3 +20,4 @@ function App() {
 }
 
 export default App;
+  
