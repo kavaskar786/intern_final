@@ -6,7 +6,7 @@
   background: url('./images/Front\ screen.svg') no-repeat center center fixed;
   background-size: cover;
   color: #1E2022;
-  padding: 20px;
+  padding: 0px 150px;
   height: 100vh;
   overflow-y: auto;
 }

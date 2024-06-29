@@ -1,45 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  height: 1000vh;
-`;
-
-const EventCard = styled.div`
-  border: 1px solid #B0BABF;
-  border-radius: 5px;
-  overflow: hidden;
-  background: #fff;
-  margin-bottom: 10px;
-  padding: 10px;
-`;
-
-const Image = styled.img`
-  width: 10%;
-  height: auto;
-`;
-
-const Title = styled.h3`
-  color: #1E2022;
-  font-size: 1rem;
-  margin: 10px 0;
-`;
-
-const Subtitle = styled.p`
-  color: #989090;
-  font-size: 0.9rem;
-`;
-
-const LoadingSpinner = styled.div`
-  text-align: center;
-  padding: 10px;
-`;
-
-
+import '../css/UpcomingEvents.css';
 
 const MAX_PAGES = 5;
 
@@ -48,6 +9,7 @@ const convertDriveLink = (url) => {
   const fileId = fileIdMatch[1];
   return `https://drive.google.com/thumbnail?id=${fileId}`;
 };
+
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
@@ -92,18 +54,20 @@ const UpcomingEvents = () => {
   }, [loading, hasMore]);
 
   return (
-    <Container>
+    <div className="upcoming-container">
       {events.map((event, index) => (
-        <EventCard key={event.eventName} ref={index === events.length - 1 ? lastEventElementRef : null}>
-          <Image src={event.imgUrl} alt={event.eventName} />
-          <Title>{event.eventName}</Title>
-          <Subtitle>{event.cityName}</Subtitle>
-          <Subtitle>{new Date(event.date).toLocaleDateString()}</Subtitle>
-          <Subtitle>{event.weather}</Subtitle>
-        </EventCard>
+        <div key={event.eventName} className="upcoming-card" ref={index === events.length - 1 ? lastEventElementRef : null}>
+          <img src={event.imgUrl} alt={event.eventName} className="upcoming-image" />
+          <div className="upcoming-details">
+            <h3 className="upcoming-title">{event.eventName}</h3>
+            <p className="upcoming-subtitle">{event.cityName}</p>
+            <p className="upcoming-subtitle">{new Date(event.date).toLocaleDateString()}</p>
+            <p className="upcoming-subtitle">{event.weather}</p>
+          </div>
+        </div>
       ))}
-      {loading && <LoadingSpinner>Loading...</LoadingSpinner>}
-    </Container>
+      {loading && <div className="loading-spinner">Loading...</div>}
+    </div>
   );
 };
 
