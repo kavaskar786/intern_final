@@ -28,7 +28,7 @@ const Navbar = () => {
             </span>
           </div>
         </div>
-        <ul className="nav-list">
+        <ul className="nav-list2">
           <li>Live shows</li>
           <li>Streams</li>
           <li>Movies</li>

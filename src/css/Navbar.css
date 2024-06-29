@@ -212,16 +212,18 @@ body {
     display: none;
   }
 
-  .nav-list {
+  .nav-list2 {
     display: flex;
     justify-content: center;
-    width: 100%;
     margin-top: 10px;
     padding: 10px 0;
     border-top: 1px solid #B0BABF;
+    font-size: .7em;
+
   }
 
-  .nav-list li {
+  .nav-list2 li {
+    list-style: none;
     margin: 0 5px;
   }
 }
