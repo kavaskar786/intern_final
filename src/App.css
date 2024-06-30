@@ -70,10 +70,6 @@ body {
   position: relative;
 }
 
-.heading:hover {
-  text-decoration: underline;
-}
-
 .heading2 {
   padding: 10px;
   font-size: 1.3rem;
@@ -83,11 +79,6 @@ body {
   z-index: 5;
   position: relative;
 }
-
-.heading2:hover {
-  text-decoration: underline;
-}
-
 
 
 .see_but{
@@ -207,7 +198,7 @@ body {
     height: 14em;
     min-width: 10em;
     min-height: 6em;
- 
+    margin:6px;
   }
 
   .landing-content h1 {
