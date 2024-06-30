@@ -38,7 +38,7 @@
   background: #fff;
   flex-shrink: 0;
   transition: transform 0.3s ease;
-  margin-top: 18px;
+  margin:8px;
   position: relative;
 }
 .upcoming-image {

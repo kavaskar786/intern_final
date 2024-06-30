@@ -203,10 +203,11 @@ body {
 
 @media (max-width: 400px) {
   .img_cont {
-    width: 14em;
-    height: 10em;
+    width: 19em;
+    height: 14em;
     min-width: 10em;
     min-height: 6em;
+ 
   }
 
   .landing-content h1 {
