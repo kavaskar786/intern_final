@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className="search-bar">
               <input type="text" placeholder="DJI phantom" />
               <button className="search-button">
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch} className='icon' />
               </button>
             </div>
           </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
           <button className="favorites-button">
-            <FontAwesomeIcon icon={faHeart} />
+            <FontAwesomeIcon icon={faHeart} className='icon'/>
             <span>Favorites</span>
           </button>
           <button className="sign-in-button">Sign In</button>
