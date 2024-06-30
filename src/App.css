@@ -201,7 +201,7 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .img_cont {
     width: 19em;
     height: 14em;
