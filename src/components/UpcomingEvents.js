@@ -66,7 +66,10 @@ const UpcomingEvents = () => {
 
   return (
     <div>
+       <div className='head_cont'>
       <a href='/' className='heading2'>Upcoming events <span>&rarr;</span></a>
+      <a href='/' className='see_but2'>see all</a>
+      </div>
       <div className="upcoming-container">
         {events.map((event, index) => (
           <div key={event.eventName} className="upcoming-card" ref={index === events.length - 1 ? lastEventElementRef : null}>

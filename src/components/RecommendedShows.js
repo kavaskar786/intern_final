@@ -127,7 +127,10 @@ const RecommendedShows = () => {
 
   return (
     <div>
+      <div className='head_cont'>
       <a href='/' className='heading'>Recommended shows <span>&rarr;</span></a>
+      <a href='/' className='see_but'>see all</a>
+      </div>
       <div className="recommended-container" ref={containerRef}>
         {shows.map((show, index) => (
           <div

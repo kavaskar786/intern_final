@@ -82,11 +82,26 @@ body {
   text-decoration: none;
   z-index: 5;
   position: relative;
-  margin-top: 30px;
 }
 
 .heading2:hover {
   text-decoration: underline;
+}
+
+
+
+.see_but{
+  display: none;
+}
+
+.see_but2{
+  display: none;
+}
+
+.head_cont{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 1400px) {
@@ -145,6 +160,28 @@ body {
     font-size: 1rem;
   }
 
+  .see_but{
+    display: block;
+    padding: 10px;
+    font-size: .8rem;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    z-index: 5;
+    position: relative;
+    text-decoration: underline;
+  }
+  .see_but2{
+    display: block;
+    padding: 10px;
+    font-size: .8rem;
+    color: #030303;
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    z-index: 5;
+    position: relative;
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 520px) {}
@@ -155,6 +192,12 @@ body {
     height: 14em;
     min-width: 14em;
     min-height: 10em;
+  }
+  .heading{
+    font-size: 1.1rem;
+  }
+  .heading2{
+    font-size: 1.1rem;
   }
 }
 
