@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faBars, faSearch, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faBars, faSearch, faHeart ,faUser} from '@fortawesome/free-solid-svg-icons';
 import '../css/Navbar.css';
 
 const Navbar = () => {
@@ -18,13 +18,13 @@ const Navbar = () => {
           </div>
           <div className='logos'>
             <span>
-              <FontAwesomeIcon icon={faHeart} />
+            <FontAwesomeIcon icon={faSearch} className='icon' />
             </span>
             <span>
-              <FontAwesomeIcon icon={faSearch} />
+              <FontAwesomeIcon icon={faHeart} className='icon' />
             </span>
             <span>
-              <FontAwesomeIcon icon={faBars} />
+              <FontAwesomeIcon icon={faUser} className='icon' />
             </span>
           </div>
         </div>

@@ -152,7 +152,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 13px;
+}
+
+.icon{
+    color:#B0BABF;
 }
 
 .nav_2 {
